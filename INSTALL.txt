@@ -1,0 +1,38 @@
+HOW TO INSTALL SKELETON APPLICATION:
+------------------------------------
+
+1) Make a new directory for your application. Copy all extraxted files into your new application directory.
+
+2) Create a new database and create tables using .sql file:
+	http://phpstartapp.googlecode.com/svn/trunk/install/db_mysql.sql (for MySQL database)
+	 or
+	http://phpstartapp.googlecode.com/svn/trunk/install/db_pgsql.sql (for PostgreSQL database)
+	
+3) Make sure that your Apache web server has mod_rewrite enabled
+
+4) Edit .htaccess file and change line with RewriteBase directive if your application is not in your web server root folder.
+   Note that Apache web server will ignore .htaccess file if AllowOverride directive is not properly set. 
+   You can set AllowOverride to All for the folder where you placed your application in Apache configuration file.
+	
+5) Edit application/psa/config_override.php file and change:
+	* database name in $PSA_CFG['pdo']['dsn']
+	* database username in $PSA_CFG['pdo']['username']
+	* database password in $PSA_CFG['pdo']['password']
+	* path in $PSA_CFG['folders']['basedir_web'] (if your application is not in web server root folder)
+	
+	See comments in application/psa/config.php file for detailed description of values in config_override.php file.
+	
+6) Checkout (or copy) PSA files into app/psa directory. Skip this step if you downloaded skeleton with PSA included.
+	 SVN repository to checkout from: http://phpstartapp.googlecode.com/svn/trunk/psa
+	  or
+	 just extract archive with PSA only into app/psa directory
+	 (download archive from http://code.google.com/p/phpstartapp/downloads/list)
+
+7) Make sure that Apache can write to application/templates/smarty/templates_c folder
+	 
+8) You should see login screen if you open your new application URL in web browser. Login with: 
+	username: psa
+	password: psa
+	
+9) Start building your own application. Make changes to the files, delete this file, 
+   delete methods you don't need, change templates...
