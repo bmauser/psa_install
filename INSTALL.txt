@@ -1,38 +1,40 @@
-HOW TO INSTALL SKELETON APPLICATION:
-------------------------------------
+STEPS TO INSTALL SKELETON APPLICATION:
+--------------------------------------
 
-1) Make a new directory for your application. Copy all extraxted files into your new application directory.
+1) Make a new directory for your application and extract all the files
+   from the downloaded archive into it.
 
-2) Create a new database and create tables using .sql file:
-	http://phpstartapp.googlecode.com/svn/trunk/install/db_mysql.sql (for MySQL database)
-	 or
-	http://phpstartapp.googlecode.com/svn/trunk/install/db_pgsql.sql (for PostgreSQL database)
+2) Create a new database and run .sql file to create initial tables.
+   Use db_mysql.sql for MySQL database or db_pgsql.sql for PostgreSQL 
+   database.
 	
-3) Make sure that your Apache web server has mod_rewrite enabled
-
-4) Edit .htaccess file and change line with RewriteBase directive if your application is not in your web server root folder.
-   Note that Apache web server will ignore .htaccess file if AllowOverride directive is not properly set. 
-   You can set AllowOverride to All for the folder where you placed your application in Apache configuration file.
-	
-5) Edit application/psa/config_override.php file and change:
-	* database name in $PSA_CFG['pdo']['dsn']
+3) Edit app/psa/config_override.php file and change:
+	* database name in $PSA_CFG['pdo']['database']
 	* database username in $PSA_CFG['pdo']['username']
 	* database password in $PSA_CFG['pdo']['password']
-	* path in $PSA_CFG['folders']['basedir_web'] (if your application is not in web server root folder)
 	
-	See comments in application/psa/config.php file for detailed description of values in config_override.php file.
+4) If you are using Apache web server, make sure that mod_rewrite is 
+   enabled. Edit .htaccess file and change the line with RewriteBase 
+   directive if your application is not in web server root folder.
+   Note that Apache web server will ignore .htaccess file if 
+   AllowOverride directive is not properly set. You can set AllowOverride 
+   to 'All' for the folder where you placed your application in Apache 
+   configuration file.
 	
-6) Checkout (or copy) PSA files into app/psa directory. Skip this step if you downloaded skeleton with PSA included.
-	 SVN repository to checkout from: http://phpstartapp.googlecode.com/svn/trunk/psa
-	  or
-	 just extract archive with PSA only into app/psa directory
-	 (download archive from http://code.google.com/p/phpstartapp/downloads/list)
+5) Make sure that web server (user under the web server is being run as) 
+   can write to directory: app/templates/smarty/templates_c
 
-7) Make sure that Apache can write to application/templates/smarty/templates_c folder
+6) Register files for autoloading. There is a helper command line script 
+   app/psa/register_files.php for that. Call it in shell with command: 
+   php register_files.php
+   By default, it will generate app/psa/autoload_data.php file.
+   When running register_files.php script you need to have write 
+   permissions to app/psa directory.
 	 
-8) You should see login screen if you open your new application URL in web browser. Login with: 
+7) You should see login screen if you open your new application URL
+   in web browser. Log in with: 
 	username: psa
 	password: psa
 	
-9) Start building your own application. Make changes to the files, delete this file, 
-   delete methods you don't need, change templates...
+8) Start building your own application. Make changes to the files, delete 
+   _INSTALL folder, delete code you don't need, change templates...
