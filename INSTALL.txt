@@ -15,26 +15,26 @@ STEPS TO INSTALL SKELETON APPLICATION:
 	
 4) If you are using Apache web server, make sure that mod_rewrite is 
    enabled. Edit .htaccess file and change the line with RewriteBase 
-   directive if your application is not in web server root folder.
+   directive if your application is not in the web server root folder.
    Note that Apache web server will ignore .htaccess file if 
    AllowOverride directive is not properly set. You can set AllowOverride 
    to 'All' for the folder where you placed your application in Apache 
    configuration file.
 	
-5) Make sure that web server (user under the web server is being run as) 
-   can write to directory: app/templates/smarty/templates_c
+5) Make sure that the web server (user under the web server is being run as) 
+   can write to the directory app/templates/smarty/templates_c
 
 6) Register files for autoloading. There is a helper command line script 
-   app/psa/register_files.php for that. Call it in shell with command: 
+   app/psa/register_files.php for that. Call it in shell with the command: 
    php register_files.php
    By default, it will generate app/psa/autoload_data.php file.
    When running register_files.php script you need to have write 
-   permissions to app/psa directory.
+   permission to app/psa directory.
 	 
-7) You should see login screen if you open your new application URL
-   in web browser. Log in with: 
+7) You should see the login screen if you open your new application's URL
+   in the web browser. Log in with: 
 	username: psa
 	password: psa
 	
 8) Start building your own application. Make changes to the files, delete 
-   _INSTALL folder, delete code you don't need, change templates...
+   _INSTALL folder, delete a code you don't need, change templates...
