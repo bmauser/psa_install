@@ -1,0 +1,19 @@
+To install skeleton application with AAI@EduHr Single sign-on follow
+steps in INSTALL.txt and make additional steps in this file.
+
+
+1) SimpleSAMLphp [http://simplesamlphp.org] must be installed and configured
+   to work with AAI@EduHr [http://www.aaiedu.hr] system.
+   See documentation here: http://developer.aaiedu.hr/faq/8.html
+
+2) Alter database schema to add 'sso' column into psa_user database table.
+     * For MySQL run query:
+       ALTER TABLE psa_user ADD COLUMN sso tinyint NOT NULL DEFAULT 0;
+   
+     * For PostgreSQL run query:
+       ALTER TABLE psa_user ADD COLUMN sso smallint NOT NULL DEFAULT 0;
+   
+3) Open app/config_override.php file and change values in:
+     * $CFG['simplesamlphp']['include']
+     * $CFG['simplesamlphp']['authentication_source']
+	
