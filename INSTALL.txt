@@ -8,7 +8,7 @@ STEPS TO INSTALL SKELETON APPLICATION:
    Use db_mysql.sql for MySQL database or db_pgsql.sql for PostgreSQL 
    database.
 	
-3) Edit app/psa/config_override.php file and change:
+3) Open app/psa/config_override.php file and change:
 	* database name in $PSA_CFG['pdo']['database']
 	* database username in $PSA_CFG['pdo']['username']
 	* database password in $PSA_CFG['pdo']['password']
