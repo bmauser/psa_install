@@ -16,4 +16,3 @@ steps in INSTALL.txt and make additional steps in this file.
 3) Open app/config_override.php file and change values in:
      * $CFG['simplesamlphp']['include']
      * $CFG['simplesamlphp']['authentication_source']
-	
