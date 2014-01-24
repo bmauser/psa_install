@@ -1,5 +1,5 @@
 To install skeleton application with AAI@EduHr Single sign-on follow
-steps in INSTALL.txt and make additional steps in this file.
+instructions in INSTALL.txt file and here:
 
 
 1) SimpleSAMLphp [http://simplesamlphp.org] must be installed and configured
