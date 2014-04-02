@@ -50,9 +50,9 @@ CREATE TABLE psa_log (
     groupname character varying(50),
     function text,
     type character varying(100),
-    request_uri character varying(250),
-    user_agent character varying(150),
-    referer character varying(250)
+    request_uri text,
+    user_agent text,
+    referer text
 );
 COMMENT ON COLUMN psa_log.log_time IS 'Log creation time';
 COMMENT ON COLUMN psa_log.message IS 'Log message';

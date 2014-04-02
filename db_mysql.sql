@@ -41,9 +41,9 @@ CREATE TABLE `psa_log` (
   `groupname` varchar(50) DEFAULT NULL COMMENT 'Group name',
   `function` text COMMENT 'Function, method or debug backtrace that created log',
   `type` varchar(100) DEFAULT NULL COMMENT 'Type of log message',
-  `request_uri` varchar(250) DEFAULT NULL,
-  `user_agent` varchar(150) DEFAULT NULL,
-  `referer` varchar(250) DEFAULT NULL,
+  `request_uri` text DEFAULT NULL,
+  `user_agent` text DEFAULT NULL,
+  `referer` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
